@@ -1,23 +1,23 @@
-class Player{
+class Voter{
     constructor(){
 
     }
     
     getCount(){
-        var getCountRef=database.ref("playerCount");
+        var getCountRef=database.ref("voterCount");
         getCountRef.on("value",function(data){
-            playerCount=data.val();
+            voterCount=data.val();
         })
     }
     updateCount(count){
         database.ref("/").update({
-            playerCount:count
+            voterCount:count
         })
     }
 
     update(name){
-        var playerIndex = "player"+playerCount;
-        database.ref(playerIndex).set({
+        var voterIndex = "voter"+voterCount;
+        database.ref(voterIndex).set({
             name:name
         })
     }

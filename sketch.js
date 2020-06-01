@@ -1,25 +1,18 @@
 var database;
-var playerCount=0;
+var voterCount=0;
 
-var gameState=0;
+var State=0;
 
-var form,player,game;
+var form,voter,questions;
 
 
 function setup(){
   database = firebase.database();
   createCanvas(500,500);
 
-  game=new Game();
-  game.getState();
-  game.start();
-
-  /*hypnoticBall = createSprite(250,250,10,10);
-  hypnoticBall.shapeColor = "red";
-
-
-  var hypnoticBallPosition = database.ref('ball/position');
-  hypnoticBallPosition.on("value", readPosition, showError);*/
+  questions=new Questions();
+  questions.getState();
+  questions.start();
 }
 
 function draw(){
