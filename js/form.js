@@ -6,7 +6,7 @@ class Form{
         var title=createElement("h2");
         title.html("Vote to make a difference");
         title.position(130, 10);
-        var input=createInput("Enter your emailID");
+        var input=createInput("Enter your Email");
         input.position(130,160);
         var button1=createButton("login");
         button1.position(150,200);
@@ -17,7 +17,8 @@ class Form{
             voterCount=voterCount+1;
 
             voter.updateCount(voterCount);
-            voter.update(emailid);
+
+            voter.updatename(emailid);
 
             title.hide();
 
@@ -33,9 +34,9 @@ class Form{
                 answ1.hide();
                 button2.hide();
 
-                var ans1=input.value();
+                var a=answ1.value();
                 
-                voter.update(ans1);
+                voter.updateAns1(a);
     
                 quest1.hide();
     
@@ -51,9 +52,9 @@ class Form{
                     answ2.hide();
                     button3.hide();
 
-                    var ans2=input.value();
+                    var b=answ2.value();
                     
-                    voter.update(ans2);
+                    voter.updateAns2(b);
         
                     quest2.hide();
         
@@ -69,9 +70,9 @@ class Form{
                         answ3.hide();
                         button4.hide();
 
-                        var ans3=input.value();
+                        var c=answ3.value();
                         
-                        voter.update(ans3);
+                        voter.updateAns3(c);
             
                         quest3.hide();
             
@@ -87,14 +88,14 @@ class Form{
                             answ4.hide();
                             button5.hide();
 
-                            var ans4=input.value();
+                            var d=answ4.value();
                             
-                            voter.update(ans4);
-                
+                            voter.updateAns4(d);
+
                             quest4.hide();
                 
                             var piece=createElement("h3");
-                            piece.html("Thank You!");
+                            piece.html("Thank You for your feedback!");
                             piece.position(130, 10);
                             
                         });
